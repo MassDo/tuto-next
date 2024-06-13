@@ -9,8 +9,10 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchRevenue() {
+  // noStore(); ca marche mais par contre mettre export const dynamic = 'force-dynamic'; dans la page ne marche pas
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
 
